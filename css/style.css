@@ -1,0 +1,12 @@
+.slogan{
+    align-items: flex-end;
+}
+
+@media (max-width: 960px) {
+    .slogan{
+        align-items: center;
+    }
+    .slogan h3{
+        text-align: center;
+    }
+}

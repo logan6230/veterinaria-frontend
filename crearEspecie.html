@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria</title>
+    <!-- importar bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-3 col-lg-2 border text-center">
+                    <img src="./img/logo-no-background.png" alt="logo-veterinaria">
+                </div>
+                <div class="col-md-9 col-lg-10 border slogan d-flex">
+                    <h3>Cuidamos su mascota por usted</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <button class="navbar-toggler" data-toogle="collapse" type="button" data-target="#barra">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="barra">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crear Responsable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crear Paciente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crearEspecie.html">Crear Especie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crear Raza </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <main>
+        <div class="container d-flex justify-content-center">
+            <form class="col-12 col-lg-6 ">
+                <div class="col-12">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" required
+                        placeholder="Ingrese el nombre...">
+                </div>
+                <div class="col-12">
+                    <label for="clasificacion" class="form-label">Clasificación</label>
+                    <input class="form-control" type="text" name="clasificacion" id="clasificacion" required>
+                    <div class="col-12">
+                        <label for="esperanza-vida" class="form-label">Esperanza de vida</label>
+                        <input class="form-control" type="text" name="esperanza-vida" id="esperanza-vida" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="peso-promedio" class="form-label">Peso Promedio</label>
+                        <input class="form-control" type="number" name="peso-promedio" id="peso-promedio" required>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <button id="btn-procesar" class="btn btn-primary col-6 mt-3" type="submit">Enviar</button>
+
+                    </div>
+            </form>
+        </div>
+
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="crearEspecie.js" type="module"></script>
+</body>
+
+</html>
