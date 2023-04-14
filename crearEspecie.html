@@ -14,53 +14,33 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="row d-flex">
-                <div class="col-md-3 col-lg-2 border text-center">
-                    <img src="./img/logo-no-background.png" alt="logo-veterinaria">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <img src="img/logo.jpg" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="listarEspecies.html">Pacientes</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-9 col-lg-10 border slogan d-flex">
-                    <h3>Cuidamos su mascota por usted</h3>
-                </div>
-
             </div>
-
-        </div>
-
+        </nav>
     </header>
-    <nav class="navbar navbar-expand-md">
-        <div class="container">
-            <button class="navbar-toggler" data-toogle="collapse" type="button" data-target="#barra">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="barra">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Crear Responsable</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Crear Paciente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="crearEspecie.html">Crear Especie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Crear Raza </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de</a>
-                    </li>
-                </ul>
-            </div>
+    <main class="d-flex p-3  flex-column flex-lg-row justify-content-center align-items-center">
 
+        <div class="card text-center" style="max-width: 25rem;">
+            <img src="img/inicio.jpg" class="card-img-top" alt="imagen-inicio">
         </div>
-    </nav>
-    <main>
         <div class="container d-flex justify-content-center">
-            <form class="col-12 col-lg-6 ">
+            <form class="col-12 col-lg-7">
                 <div class="col-12">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input class="form-control" type="text" name="nombre" id="nombre" required
@@ -68,18 +48,17 @@
                 </div>
                 <div class="col-12">
                     <label for="clasificacion" class="form-label">Clasificación</label>
-                    <input class="form-control" type="text" name="clasificacion" id="clasificacion" required>
+                    <input class="form-control" type="text" name="clasificacion" id="clasificacion" required placeholder="ave, pez, mamimefero...">
                     <div class="col-12">
                         <label for="esperanza-vida" class="form-label">Esperanza de vida</label>
-                        <input class="form-control" type="text" name="esperanza-vida" id="esperanza-vida" required>
+                        <input class="form-control" type="text" name="esperanza-vida" id="esperanza-vida" required placeholder="expresada en años">
                     </div>
                     <div class="col-12">
                         <label for="peso-promedio" class="form-label">Peso Promedio</label>
-                        <input class="form-control" type="number" name="peso-promedio" id="peso-promedio" required>
+                        <input class="form-control" type="number" name="peso-promedio" id="peso-promedio" required placeholder="ingrese el peso en numeros">
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                        <button id="btn-procesar" class="btn btn-primary col-6 mt-3" type="submit">Enviar</button>
-
+                        <button id="btn-procesar" class="btn  col-6 mt-3" type="submit">Enviar</button>
                     </div>
             </form>
         </div>
@@ -87,12 +66,27 @@
 
     </main>
     <footer>
+        <div>
+            
+            <p> © 2023 Copyright: Segundo Pantoja</p>
+        </div>
+        <div>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/segundo-pantoja" target="_blank"><img src="img/linkedin.png"
+                            alt="logo-linkedin"></a></li>
+                <li><a href="https://github.com/logan6230" target="_blank"><img src="img/git.png"
+                            alt="logo-git-hub"></a></li>
+                <li><a href="https://www.youtube.com/@Code-Logan" target="_blank"><img src="img/you-tube.png"
+                            alt="logo-you-tube"></a></li>
+            </ul>
+        </div>
+
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-        <script src="crearEspecie.js" type="module"></script>
+    <script src="crearEspecie.js" type="module"></script>
 </body>
 
 </html>
