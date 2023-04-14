@@ -10,22 +10,20 @@ class EspecieAPI {
         //TO DO: validar datos
         const nombre = document.getElementById('nombre').value;
         const clasificacion = document.getElementById('clasificacion').value;
-        const esperanzaVida = document.getElementById('esperanza-vida').value;
+        const edad = document.getElementById('edad').value;
         const pesoPromedio = parseFloat(document.getElementById('peso-promedio').value);
 
+        if (nombre === '' || clasificacion === '' || edad === '' || edad === '') {
+
+        }
         // Crear Json con los datos anteriores
-
-
 
         const datos = {
             nombre: nombre,
             clasificacion: clasificacion,
-            esperanza_vida: esperanzaVida,
+            edad: edad,
             peso_promedio: pesoPromedio
-
         }
-
-
 
         //TO DO: Validar datos y gestionnar errores
         await fetch(
@@ -41,12 +39,10 @@ class EspecieAPI {
         )
     }
 
-
     //1. Conectarnos a la ruta /listar_especies.
     // 2. Recorrer el Json
     // 2.1 Agregar una fila en la tabla por cada objeto retornado en Json.
     async listarEspecie() {
-
         // Paso 1.
         // TO DO: La API no deberia estar sin proteccion
         let especies = await fetch("http://localhost:3000/listar_especies");
@@ -64,9 +60,7 @@ class EspecieAPI {
                 fila.insertCell().innerText = especie.esperanza_vida;
                 fila.insertCell().innerText = especie.peso_promedio;
             });
-
     }
-
 }
 //Convertir la clase en un modulo
 export default EspecieAPI;

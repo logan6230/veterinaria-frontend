@@ -15,25 +15,31 @@
   .slogan {
     align-items: center;
   }
+
   .slogan h3 {
     text-align: center;
   }
 }
+
 body {
   background-color: var(--color5);
   font-family: "Roboto", sans-serif;
 }
-main{
-    height: calc(100vh - 206px);
+
+main {
+  height: calc(100vh - 206px);
 }
-p{
-    margin: 0;
+
+p {
+  margin: 0;
 }
+
 header {
   background-color: var(--color4);
   font-size: 1.2rem;
   font-weight: bolder;
 }
+
 .btn {
   background-color: var(--color2);
   color: white;
@@ -45,6 +51,7 @@ header {
   cursor: pointer;
   transition: 0.5s;
 }
+
 footer {
   background-color: var(--color4);
   color: white;
@@ -71,18 +78,39 @@ footer ul li a {
   padding: 10px;
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 991px) {
   footer {
     padding: 20px 50px;
   }
+
   .card-img-top {
     width: 18rem;
+  }
+
+  .card {
+    margin: 20px;
   }
 }
 
 @media only screen and (max-width: 460px) {
   .card-img-top {
-    width: 15rem;
+    display: none;
+  }
+
+}
+
+@media only screen and (max-height: 460px) {
+  .card-img-top {
+    display: none;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    height: 100%;
   }
 }
 
