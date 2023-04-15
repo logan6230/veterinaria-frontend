@@ -8,27 +8,43 @@ class EspecieAPI {
     async guardarEspecie() {
         // paso 1
         //TO DO: validar datos
+        const alertError = document.getElementById('alert-especie');
+        const formEspecie = document.getElementById('form-especie');
         const nombre = document.getElementById('nombre').value;
         const clasificacion = document.getElementById('clasificacion').value;
-        const esperanzaVida = document.getElementById('esperanza-vida').value;
+        const edad = parseInt(document.getElementById('edad').value);
         const pesoPromedio = parseFloat(document.getElementById('peso-promedio').value);
 
+        if (nombre === '' || clasificacion === '' || edad === '' || edad === '') {
+            alertError.innerHTML = `<div class="alert alert-danger" role="alert">Todos los campos son obligatorios!</div>`
+            setTimeout(() => {
+                alertError.innerHTML = "";
+            }, 3000);
+            return
+        }
+
+        if (this.validarDatos(nombre) === false || this.validarDatos(clasificacion) === false) {
+            if (this.validarDatos(nombre) === false) {
+                alertError.innerHTML = `<div class="alert alert-danger" role="alert">El nombre solo puede contener letras!</div>`
+            }
+            if (this.validarDatos(clasificacion) === false) {
+                alertError.innerHTML = `<div class="alert alert-danger" role="alert">La clasificacion solo puede contener letras!</div>`
+            }
+            setTimeout(() => {
+                alertError.innerHTML = "";
+            }, 3000);
+            return
+        }
+
         // Crear Json con los datos anteriores
-
-
-
         const datos = {
             nombre: nombre,
             clasificacion: clasificacion,
-            esperanza_vida: esperanzaVida,
+            edad: edad,
             peso_promedio: pesoPromedio
-
         }
 
-
-
-        //TO DO: Validar datos y gestionnar errores
-        await fetch(
+        const response = await fetch(
             "http://localhost:3000/crear_especies",
             {
                 method: "POST",
@@ -38,15 +54,22 @@ class EspecieAPI {
                 }
 
             }
-        )
-    }
+        );
+        //TO DO: gestionar mensaje de error de la API
 
+        //TO DO: Mostrar mensaje de exito        
+        alertError.innerHTML = `<div class="alert alert-success" role="alert">Especie creada con exito!</div>`
+        formEspecie.reset();
+        setTimeout(() => {
+            alertError.innerHTML = "";
+        }, 3000);
+
+    }
 
     //1. Conectarnos a la ruta /listar_especies.
     // 2. Recorrer el Json
     // 2.1 Agregar una fila en la tabla por cada objeto retornado en Json.
     async listarEspecie() {
-
         // Paso 1.
         // TO DO: La API no deberia estar sin proteccion
         let especies = await fetch("http://localhost:3000/listar_especies");
@@ -61,10 +84,17 @@ class EspecieAPI {
                 fila.insertCell().innerText = especie.id_especie;
                 fila.insertCell().innerText = especie.nombre;
                 fila.insertCell().innerText = especie.clasificacion;
-                fila.insertCell().innerText = especie.esperanza_vida;
+                fila.insertCell().innerText = especie.edad;
                 fila.insertCell().innerText = especie.peso_promedio;
             });
+    }
 
+    validarDatos(data) {
+        console.log(data);
+        let reg = new RegExp('[a-zA-Z]');
+        console.log(reg);
+        console.log(reg.test(data));
+        return reg.test(data);
     }
 
 }

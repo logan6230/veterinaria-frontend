@@ -1,12 +1,145 @@
-.slogan{
-    align-items: flex-end;
+/* crear clases para colores */
+:root {
+  --color1: #000003;
+  --color2: #002a3f;
+  --color3: #005b81;
+  --color4: #0093cd;
+  --color5: #00d4ff;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+.slogan {
+  align-items: flex-end;
 }
 
 @media (max-width: 960px) {
-    .slogan{
-        align-items: center;
-    }
-    .slogan h3{
-        text-align: center;
-    }
+  .slogan {
+    align-items: center;
+  }
+
+  .slogan h3 {
+    text-align: center;
+  }
+}
+
+body {
+  background-color: var(--color5);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+.header-table {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+main {
+  min-height: calc(100vh - 206px);
+}
+.main-table {
+  padding: 100px 0 120px 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  background-color: var(--color4);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.btn {
+  background-color: var(--color2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+footer {
+  background-color: var(--color4);
+  color: white;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  counter-reset: item 0;
+  z-index: 12;
+  padding: 20px 150px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+  footer {
+    padding: 20px 50px;
+  }
+
+  .card-img-top {
+    width: 18rem;
+  }
+
+  .card {
+    margin: 20px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .card  {
+      display: none;
+  }
+}
+
+@media only screen and (max-height: 460px) {
+  main {
+    height: calc(100vh - 206px);
+  }
+  .card{
+    display: none;
+  }
+  footer {
+    position: relative;
+  }
+
+  .main-table {
+    padding: 100px 0 0 0;
+  }
+  main {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    height: 120px;
+  }
 }
