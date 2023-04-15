@@ -45,7 +45,7 @@ class EspecieAPI {
         }
 
         const response = await fetch(
-            "http://localhost:3000/crear_especies",
+            "veterinaria-backend-production.up.railway.app/crear_especies",
             {
                 method: "POST",
                 body: JSON.stringify(datos),
