@@ -45,7 +45,8 @@ class EspecieAPI {
         }
 
         const response = await fetch(
-            "http://localhost:3000/crear_especies",
+            "https://vet-node.fly.dev/crear_especies",
+            "http://localhost:8080/crear_especies",
             {
                 method: "POST",
                 body: JSON.stringify(datos),
@@ -72,7 +73,8 @@ class EspecieAPI {
     async listarEspecie() {
         // Paso 1.
         // TO DO: La API no deberia estar sin proteccion
-        let especies = await fetch("http://localhost:3000/listar_especies");
+        // let especies = await fetch("http://localhost:8080/listar_especies");
+        let especies = await fetch("https://vet-node.fly.dev/listar_especies");
         especies = await especies.json();
         const miTabla = document.getElementById('table-especies')
 
@@ -83,7 +85,7 @@ class EspecieAPI {
                 const fila = miTabla.insertRow()
                 fila.insertCell().innerText = especie.id_especie;
                 fila.insertCell().innerText = especie.nombre;
-                fila.insertCell().innerText = especie.clasificacion;
+                fila.insertCell().innerText = especie.especie;
                 fila.insertCell().innerText = especie.edad;
                 fila.insertCell().innerText = especie.peso_promedio;
             });
