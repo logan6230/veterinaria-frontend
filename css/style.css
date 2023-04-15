@@ -6,7 +6,10 @@
   --color4: #0093cd;
   --color5: #00d4ff;
 }
-
+html {
+  min-height: 100%;
+  position: relative;
+}
 .slogan {
   align-items: flex-end;
 }
@@ -24,10 +27,20 @@
 body {
   background-color: var(--color5);
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+.header-table {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 
 main {
-  height: calc(100vh - 206px);
+  min-height: calc(100vh - 206px);
+}
+.main-table {
+  padding: 100px 0 120px 0;
 }
 
 p {
@@ -64,6 +77,9 @@ footer {
   counter-reset: item 0;
   z-index: 12;
   padding: 20px 150px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 footer ul {
@@ -93,22 +109,25 @@ footer ul li a {
 }
 
 @media only screen and (max-width: 460px) {
-  .card-img-top {
-    display: none;
+  .card  {
+      display: none;
   }
-
 }
 
 @media only screen and (max-height: 460px) {
-  .card-img-top {
+  main {
+    height: calc(100vh - 206px);
+  }
+  .card{
     display: none;
   }
-
-  body {
-    display: flex;
-    flex-direction: column;
+  footer {
+    position: relative;
   }
 
+  .main-table {
+    padding: 100px 0 0 0;
+  }
   main {
     height: 100%;
   }

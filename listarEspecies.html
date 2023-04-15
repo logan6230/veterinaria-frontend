@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body >
-    <header>
+<body>
+    <header class="header-table">
         <nav class="navbar navbar-expand-sm navbar-light">
             <div class="container-fluid">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
@@ -35,14 +35,22 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <table id="table-especies" class="table table-striped">
-
+    <main class="main-table">
+        <div class="container mt-3">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">peso</th>
+                    </tr>
+                <tbody id="table-especies">
+                </tbody>
+                </thead>
             </table>
         </div>
-
-
     </main>
     <footer>
         <div>

@@ -9,5 +9,8 @@ btnProcesar.addEventListener('click',
         event.preventDefault();
         btnProcesar.disabled = true;
         await miEspecie.guardarEspecie();
+        setTimeout(() => {
+            btnProcesar.disabled = false;
+        }, 3000);
     }
 )

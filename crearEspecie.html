@@ -34,13 +34,16 @@
             </div>
         </nav>
     </header>
-    <main class="d-flex p-3  flex-column flex-lg-row justify-content-center align-items-center">
-
+    <main class="container d-flex flex-column flex-lg-row justify-content-center align-items-center">
         <div class="card text-center" style="max-width: 25rem;">
             <img src="img/inicio.jpg" class="card-img-top" alt="imagen-inicio">
         </div>
-        <div class="container d-flex justify-content-center">
-            <form class="col-12 col-lg-7 border border-dark p-4 rounded">
+
+        <div class="container d-flex justify-content-center p-4">
+
+            <form id="form-especie" class="col-12 col-lg-10 border border-dark p-4 rounded">
+                <div id="alert-especie">
+                </div>
                 <div class="col-12">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input class="form-control" type="text" name="nombre" id="nombre" required
@@ -48,26 +51,27 @@
                 </div>
                 <div class="col-12">
                     <label for="clasificacion" class="form-label">Clasificación</label>
-                    <input class="form-control" type="text" name="clasificacion" id="clasificacion" required placeholder="ave, pez, mamimefero...">
+                    <input class="form-control" type="text" name="clasificacion" id="clasificacion" required
+                        placeholder="ave, pez, mamifero...">
                     <div class="col-12">
-                        <label for="edad" class="form-label">Esperanza de vida</label>
-                        <input class="form-control" type="text" name="edad" id="edad" required placeholder="expresada en años">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input class="form-control" type="number" name="edad" id="edad" required
+                            placeholder="expresada en años">
                     </div>
                     <div class="col-12">
                         <label for="peso-promedio" class="form-label">Peso Promedio</label>
-                        <input class="form-control" type="number" name="peso-promedio" id="peso-promedio" required placeholder="ingrese el peso en numeros">
+                        <input class="form-control" type="number" name="peso-promedio" id="peso-promedio" required
+                            placeholder="ingrese el peso en numeros">
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <button id="btn-procesar" class="btn  col-6 mt-3" type="submit">Enviar</button>
                     </div>
             </form>
         </div>
-
-
     </main>
     <footer>
         <div>
-            
+
             <p> © 2023 Copyright: Segundo Pantoja</p>
         </div>
         <div>
@@ -80,8 +84,6 @@
                             alt="logo-you-tube"></a></li>
             </ul>
         </div>
-
-
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
