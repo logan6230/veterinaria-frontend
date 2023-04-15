@@ -46,7 +46,7 @@ class EspecieAPI {
 
         const response = await fetch(
             "https://vet-node.fly.dev/crear_especies",
-            "http://localhost:8080/crear_especies",
+           // "http://localhost:8080/crear_especies",
             {
                 method: "POST",
                 body: JSON.stringify(datos),
