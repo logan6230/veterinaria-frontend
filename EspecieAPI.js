@@ -11,11 +11,11 @@ class EspecieAPI {
         const alertError = document.getElementById('alert-especie');
         const formEspecie = document.getElementById('form-especie');
         const nombre = document.getElementById('nombre').value;
-        const clasificacion = document.getElementById('clasificacion').value;
+        const especie = document.getElementById('especie').value;
         const edad = parseInt(document.getElementById('edad').value);
         const pesoPromedio = parseFloat(document.getElementById('peso-promedio').value);
 
-        if (nombre === '' || clasificacion === '' || edad === '' || edad === '') {
+        if (nombre === '' || especie === '' || edad === '' || edad === '') {
             alertError.innerHTML = `<div class="alert alert-danger" role="alert">Todos los campos son obligatorios!</div>`
             setTimeout(() => {
                 alertError.innerHTML = "";
@@ -23,11 +23,11 @@ class EspecieAPI {
             return
         }
 
-        if (this.validarDatos(nombre) === false || this.validarDatos(clasificacion) === false) {
+        if (this.validarDatos(nombre) === false || this.validarDatos(especie) === false) {
             if (this.validarDatos(nombre) === false) {
                 alertError.innerHTML = `<div class="alert alert-danger" role="alert">El nombre solo puede contener letras!</div>`
             }
-            if (this.validarDatos(clasificacion) === false) {
+            if (this.validarDatos(especie) === false) {
                 alertError.innerHTML = `<div class="alert alert-danger" role="alert">La clasificacion solo puede contener letras!</div>`
             }
             setTimeout(() => {
@@ -39,7 +39,7 @@ class EspecieAPI {
         // Crear Json con los datos anteriores
         const datos = {
             nombre: nombre,
-            clasificacion: clasificacion,
+            especie: especie,
             edad: edad,
             peso_promedio: pesoPromedio
         }
